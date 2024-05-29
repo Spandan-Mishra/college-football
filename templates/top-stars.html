@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Top-Stars
+{% endblock %}
+
+{% block h1 %}
+Top Stars
+{% endblock %}
+    
+{% block main %}
+    <!--Description-->
+    <div class="my-5 border-bottom">
+        <div class="text-center">
+            <div class="container">
+                <p class="col-lg-10 mx-auto lead electro pb-4">
+                    Discover the ultimate player for your team with our Top-Stars feature! 
+                    Whether you're searching for a rock-solid defender, a dynamic midfielder, or a prolific striker, you can specify the exact position and age range you're looking for. 
+                    But that's not all — our advanced search lets you add special qualities to refine your quest. The qualities are - <em>Speedster, Complete Player, Hidden Gem, Goal-Scoring Beast, Defensive Wall, and Golden Hands</em>. 
+                    Mix and match these attributes to find your ideal match—like a young Speedster for your wings, a Goal-Scoring Beast up front, a Defensive Wall in your backline, or a Complete Player to dominate the midfield. 
+                    This feature is your go-to for uncovering the perfect fit for your team’s strategy and style.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!--Selection Section-->
+    <form action="/top-stars" method="post">
+        <!--position-->
+        <p class="heading my-3">Select Position:</p>
+        <div class="input-group mb-4">
+            <select class="form-select white" name="position">
+                <option></option>
+                {% for position in positions %}
+                    <option>{{ position.Position }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <!--qualities-->
+        <p class="heading my-3">Select Qualities (None, one or more):</p>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="input-group mb-4">
+                    <select class="form-select white" name="quality1">
+                        <option></option>
+                        {% for quality in qualities %}
+                        <option>{{ quality }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="input-group mb-4">
+                    <select class="form-select white" name="quality2">
+                        <option></option>
+                        {% for quality in qualities %}
+                        <option>{{ quality }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="input-group mb-4">
+                    <select class="form-select white" name="quality3">
+                        <option></option>
+                        {% for quality in qualities %}
+                        <option>{{ quality }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+        </div>
+        
+        <!--age-->
+        <div class="col-lg-12">
+            <p class="heading my-3">Select Age Category:</p>
+            <div class="input-group mb-4">
+                <select class="form-select white" name="age">
+                    <option></option>
+                    <option>less than 20</option>
+                    <option>less than 30</option>
+                    <option>less than 40</option>
+                </select>
+            </div>
+        </div>
+            
+        
+
+        <!--button-->
+        <button class="btn btn-outline-secondary heading white" type="submit">Submit</button>
+    </form>
+    
+{% endblock %}

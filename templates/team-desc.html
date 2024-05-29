@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Know Your Team!
+{% endblock %}
+
+{% block h1 %}
+{{ team[0].Team }}
+{% endblock %}
+    
+{% block main %}
+    <!--Description-->
+    <div class="my-5 border-bottom">
+        <div class="text-center">
+            <div class="container">
+                <p class="col-lg-10 mx-auto lead electro display-6 mb-5">
+                    {{ team[0].About }}
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <p class="electro">*{Some data may not be accurate according to the 23-24 Football Season}</p>
+    
+
+    
+{% endblock %}

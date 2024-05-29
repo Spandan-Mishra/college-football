@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Match-Up!
+{% endblock %}
+
+{% block h1 %}
+Match-Up
+{% endblock %}
+    
+{% block main %}
+    <!--Description-->
+    <div class="my-5 border-bottom">
+        <div class="text-center">
+            <div class="container">
+                <p class="col-lg-10 mx-auto lead electro pb-4">
+                    <em>Unleash your inner strategist with our innovative Match-Up feature! Gone are the days of predictable team selections. Here, you get to choose your battleground, transforming random selection into a thrilling tactical showdown.</em>
+                    <br><br>
+                    Want to orchestrate an underdog's victory? Dive into <strong>David vs Goliath</strong> mode, where you'll be pitted against your friend, one of you wielding a powerhouse team brimming with superstars, while the other crafts a cunning strategy with a squad hungry to prove themselves.  
+                    <strong>Heavyweights</strong> mode, on the other hand, throws you both into the lion's den, each controlling a footballing titan. Here, tactical mastery and a touch of luck will determine who emerges victorious in a clash of titans.  
+                    And if you crave the white-hot intensity of a local rivalry, select <strong>Derby</strong> mode. Here, you'll be handed the reins of two historic foes, the chance to rewrite history and etch your name in digital glory forever at your fingertips! 
+                    So, what are you waiting for? Choose your Match-Up mode and prepare for an unforgettable footballing experience!
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!--Selection Section-->
+    <form action="/match-up" method="post">
+        <!--Match-Up-->
+        <p class="heading my-3">Select Match-Up Type:</p>
+        <div class="input-group mb-4">
+            <select class="form-select white" name="match">
+                <option></option>
+                <option>David v/s Goliath</option>
+                <option>Heavyweights</option>
+                <option>Derby</option>
+            </select>
+        </div>
+        <!--button-->
+        <button class="btn btn-outline-secondary heading white" type="submit">Submit</button>
+    </form>
+{% endblock %}

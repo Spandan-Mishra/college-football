@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Know Your Team!
+{% endblock %}
+
+{% block h1 %}
+Know Your Team
+{% endblock %}
+    
+{% block main %}
+    <!--Description-->
+    <div class="my-5 border-bottom">
+        <div class="text-center">
+            <div class="container">
+                <p class="col-lg-10 mx-auto lead electro pb-4">
+                    Unveil the essence of your favorite team with our Know Your Team feature!
+                     Select any Club or International team from our extensive pool, and dive into a comprehensive overview tailored just for you. 
+                     Discover the team's greatest accolades, meet their prominent players, and understand their unique playstyle. 
+                     Immerse yourself in the rich history that has shaped their journey and success. 
+                     This feature is your all-in-one solution, sparing you the hassle of scouring the internet for details. 
+                     Whether you want to learn about tactical approaches, star performers in the current squad, or historic moments, Know Your Team brings everything you need right to your fingertips, making it an engaging and enlightening experience.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!--Selection Section-->
+    <form action="/know-your-team" method="post">
+        <!--Match-Up-->
+        <p class="heading my-3">Select Team:</p>
+        <div class="input-group mb-4">
+            <select class="form-select white" name="know">
+                <option></option>
+                {% for team in teams %}
+                    <option>{{ team.Team }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <!--button-->
+        <button class="btn btn-outline-secondary heading white" type="submit">Submit</button>
+    </form>
+
+    
+{% endblock %}

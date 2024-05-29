@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Match-Up!
+{% endblock %}
+
+{% block h1 %}
+Here is your Match-Up!
+{% endblock %}
+    
+{% block main %}
+    <!--Match-Up-->
+    <div class="my-5 container1">
+        <div class="section">
+            <table class="w-100">
+                <thead>
+                    <tr class="border-bottom heading">
+                        <th class="px-5">Team for Player 1</th>
+                        <th class="px-5">Team for Player 2</th>
+                    </tr>
+                </thead>
+                <tbody>
+                        <tr class="electro display-5">
+                            <td class="py-5">{{ team1[0].Club }}</td>
+                            <td class="py-5">{{ team2[0].Club }}</td>
+                        </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!--Description-->
+    <h2 class="teko mb-3 gold">It's GAMETIME!</h2>
+    <h5 class="electro ">
+        Based on your <strong class="gold">{{ type }}</strong> preference, the match will be between 
+        <strong class="gold">{{ team1[0].Club }}</strong> & <strong class="gold">{{ team2[0].Club }}</strong>. 
+        Who will emerge victorious?  Let the games begin!
+    </h5>
+{% endblock %}
